@@ -1,0 +1,102 @@
+.airport-cab-con {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+}
+
+.buttons-con {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+.ride-type {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mobile-num-con {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f1f1f1;
+  height: 45px;
+  padding: 0 20px 0 20px;
+  border-radius: 2px;
+}
+.mobile-input {
+  background-color: transparent;
+  height: 100%;
+  flex: 1;
+  color: #828282;
+  border: 0;
+  margin-top: 10px;
+  outline: 0;
+  line-height: 4px;
+}
+.location-con {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f1f1f1;
+  height: 45px;
+  padding: 0 20px 0 20px;
+  margin-top: 10px;
+  font-family: 'Roboto';
+  border-radius: 2px;
+}
+.icon {
+  height: 30px;
+}
+.depart-points {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.dropdown-terminal,
+.dropdown-city {
+  width: 100%;
+
+  padding: 11px 11px 8px 11px;
+  color: #828282;
+  margin-top: 3%;
+  padding-top: 2%;
+  -webkit-appearance: none;
+  background-color: transparent;
+  height: 43px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+.select-con {
+  width: 48%;
+  -webkit-appearance: none;
+  overflow: hidden;
+  margin: 0.5% 0;
+  background-color: #f1f1f1;
+  position: relative;
+  padding-right: 10px;
+  margin-bottom: 1%;
+  display: flex;
+  align-items: center;
+}
+.confirm-pickup-btn {
+  margin-top: 20px;
+  height: 40px;
+  width: 100%;
+  background-color: #373434;
+  color: white;
+  outline: none;
+  border: 0;
+}
+.image {
+  width: 100%;
+  margin: 10px 0 10px 0;
+}

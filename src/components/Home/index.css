@@ -1,0 +1,35 @@
+.home-container {
+  width: 100vw;
+  margin: 0;
+  max-width: 350px;
+}
+.nav-bar-con {
+  width: 100%;
+  display: flex;
+}
+.brand-image {
+  width: 130px;
+  margin-top: 38px;
+}
+.brand-con {
+  background-repeat: no-repeat;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  align-items: center;
+  padding: 10px;
+  flex-shrink: 1;
+  background-image: url('https://res.cloudinary.com/vinayreddy/image/upload/v1648227529/a472ab6b21d05a81424d36efe73b0d18_uc97bg.png');
+}
+.arrow {
+  color: #ffffff;
+}
+.ride-selector-con {
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1;
+}
+.ride-details-con {
+  padding: 28px;
+}

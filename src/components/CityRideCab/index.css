@@ -1,0 +1,28 @@
+.pick-city-con {
+  width: 100%;
+  -webkit-appearance: none;
+  overflow: hidden;
+  margin-top: 10px;
+  background-color: #f1f1f1;
+  position: relative;
+  padding-right: 10px;
+  margin-bottom: 1%;
+  display: flex;
+  align-items: center;
+}
+.ride-city {
+  width: 100%;
+  padding: 11px 11px 8px 11px;
+  color: #828282;
+  margin-top: 3%;
+  padding-top: 2%;
+  -webkit-appearance: none;
+  background-color: transparent;
+  height: 43px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+.error-msg {
+  color: red;
+}

@@ -1,0 +1,24 @@
+.btn-con {
+  max-width: 184px;
+  height: 52px;
+  left: 21px;
+  top: 113px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e7e5e5;
+  border-radius: 5px;
+  flex: 1;
+  margin: 10px;
+}
+.pick-up-btn {
+  border: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  font-weight: 600;
+}
+.active-btn {
+  background-color: #000000;
+  color: white;
+}

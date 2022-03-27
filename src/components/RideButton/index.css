@@ -1,0 +1,13 @@
+.button {
+  margin: 20px 10px 20px 10px;
+  background-color: transparent;
+  border: 0px;
+  font-weight: bold;
+  font-family: 'Roboto';
+  flex-shrink: 2;
+}
+.active-button {
+  border-bottom: 4px solid red !important;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

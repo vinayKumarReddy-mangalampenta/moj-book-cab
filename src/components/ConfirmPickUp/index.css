@@ -1,0 +1,16 @@
+.from-and-to-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.confirm-con {
+  max-width: 350px;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 23px;
+}
+.car-img {
+  width: 100%;
+}

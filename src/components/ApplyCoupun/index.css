@@ -1,0 +1,27 @@
+.coupun-con {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  align-items: center;
+  background-color: #f1f1f1;
+  height: 45px;
+  padding: 0 20px 0 20px;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+.coupun-input {
+  flex: 1;
+  background-color: transparent;
+  height: 40px;
+  border: 0;
+  outline: none;
+}
+.apply-btn {
+  border: none;
+  outline: none;
+  color: red;
+}
+
+.err-msg {
+  color: red;
+}
