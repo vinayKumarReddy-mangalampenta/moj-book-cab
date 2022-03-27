@@ -121,7 +121,13 @@ class AirportCab extends Component {
   }
 
   displayFromAirportForm = () => {
-    const {cityList, terminals, activeTerminal, dropLocation} = this.state
+    const {
+      cityList,
+      pickupPoint,
+      terminals,
+      activeTerminal,
+      dropLocation,
+    } = this.state
     return (
       <div className="from-port-con">
         {this.displayMobileNumInputCon()}
@@ -165,7 +171,11 @@ class AirportCab extends Component {
             type="text"
             value={dropLocation}
             onChange={this.onChangeDropLocation}
-            placeholder="Drop location"
+            placeholder={
+              pickupPoint === pickUpPoints[0].id
+                ? 'Drop location'
+                : 'Pick location'
+            }
             className="mobile-input"
           />
           <BiCurrentLocation className="icon" />
@@ -215,7 +225,7 @@ class AirportCab extends Component {
         </div>
         {pickupPoint === pickUpPoints[0].id
           ? this.displayFromAirportForm()
-          : this.displayToFromAirportForm()}
+          : this.displayFromAirportForm()}
       </div>
     )
   }
