@@ -8,7 +8,7 @@ const ConfirmPickUp = props => {
   const toPlace = new URLSearchParams(search).get('to')
   const mobileNum = new URLSearchParams(search).get('number')
   const city = new URLSearchParams(search).get('city')
-  console.log(toPlace)
+
   return (
     <div className="confirm-con">
       <div className="from-and-to-con">

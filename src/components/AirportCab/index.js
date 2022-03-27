@@ -59,7 +59,10 @@ class AirportCab extends Component {
     const response = await fetch(url, options)
     const fetchedData = await response.json()
     if (fetchedData[selectCityValue] !== undefined) {
-      this.setState({terminals: fetchedData[selectCityValue]})
+      this.setState({
+        terminals: fetchedData[selectCityValue],
+        activeTerminal: fetchedData[selectCityValue].source_name,
+      })
     } else {
       this.setState({terminals: []})
     }
@@ -73,9 +76,11 @@ class AirportCab extends Component {
     }
 
     const res = await fetch(url, options)
-    const data = await res.json()
+    if (res.ok) {
+      const data = await res.json()
 
-    this.setState({cityList: data})
+      this.setState({cityList: data})
+    }
   }
 
   setAsActivePickUpPoint = id => {
@@ -120,12 +125,37 @@ class AirportCab extends Component {
     this.setState({activeTerminal: event.target.value})
   }
 
+  onSubmitForm = () => {
+    const {
+      mobileNum,
+      selectCityValue,
+      pickupPoint,
+      activeTerminal,
+      activeRideType,
+      dropLocation,
+    } = this.state
+    if (selectCityValue !== '' && activeTerminal !== '' && mobileNum !== '') {
+      const path = `/confirm-pickup/${activeRideType}/?number=${mobileNum}&city=${selectCityValue}&from=${
+        pickupPoint === pickUpPoints[0].id ? selectCityValue : dropLocation
+      }&to=${
+        pickupPoint === pickUpPoints[0].id ? dropLocation : selectCityValue
+      }`
+      console.log('i am working')
+      const {history} = this.props
+      this.setState({showError: false})
+      history.push(path)
+    } else {
+      this.setState({showError: true})
+    }
+  }
+
   displayFromAirportForm = () => {
     const {
       cityList,
       pickupPoint,
       terminals,
       activeTerminal,
+      selectCityValue,
       dropLocation,
     } = this.state
     return (
@@ -136,10 +166,9 @@ class AirportCab extends Component {
             <select
               onChange={this.onChangeActiveCity}
               className="dropdown-city"
+              value={selectCityValue}
             >
-              <option selected disabled>
-                Select City
-              </option>
+              <option disabled>Select City</option>
               {cityList.map(each => (
                 <option key={each.id} value={each.code}>
                   {each.name}
@@ -154,9 +183,7 @@ class AirportCab extends Component {
               value={activeTerminal}
               className="dropdown-terminal"
             >
-              <option selected disabled>
-                Select Terminal
-              </option>
+              <option disabled>Select Terminal</option>
               {terminals.map(each => (
                 <option key={each.id} value={each.source_name}>
                   {each.source_name}
@@ -186,21 +213,19 @@ class AirportCab extends Component {
           alt="book cab"
         />
         <ApplyCoupun />
-        <button className="confirm-pickup-btn" type="button">
+        <button
+          onClick={this.onSubmitForm}
+          className="confirm-pickup-btn"
+          type="button"
+        >
           Confirm pickup{' '}
         </button>
       </div>
     )
   }
 
-  displayToFromAirportForm = () => (
-    <div>
-      <h1>I am to airport form</h1>
-    </div>
-  )
-
   render() {
-    const {pickupPoint, activeRideType} = this.state
+    const {pickupPoint, showError, activeRideType} = this.state
     return (
       <div className="airport-cab-con">
         <ul className="buttons-con">
@@ -223,9 +248,10 @@ class AirportCab extends Component {
             />
           ))}
         </div>
-        {pickupPoint === pickUpPoints[0].id
-          ? this.displayFromAirportForm()
-          : this.displayFromAirportForm()}
+        {this.displayFromAirportForm()}
+        {showError && (
+          <p className="error-msg">Please fill all required contents</p>
+        )}
       </div>
     )
   }
